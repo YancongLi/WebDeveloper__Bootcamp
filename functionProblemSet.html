@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Functions Problem Set</title>
+	<script type="text/javascript">
+
+		function isEven (num) {
+			return (num % 2 === 0);
+		}
+
+		console.log("isEven(4): " + isEven(4));
+		console.log("isEven(21): " + isEven(21));
+		console.log("isEven(68): " + isEven(68));
+		console.log("isEven(333): " + isEven(333));
+
+		function factorial (num) {
+			// while (num > 1) {
+			// 	return num * factorial(num - 1);
+			// }
+			// return num;
+			var result = 1;
+			for (var i = 2; i <= num; i++) {
+				result = result * i;
+			}
+			return result;
+		}
+
+		console.log("factorial(4): " + factorial(4));
+
+		function kebabToSnake (string) {
+			var str = new String();
+			for (var i = 0; i < string.length; i++) {
+			   if (string[i] == "-") {
+                   str += "_";
+			   }else {
+			   		str += string[i];
+			   }
+			} 
+			return str;
+		}
+
+		console.log("kebabToSnake(\"hello-world\"): " + kebabToSnake("hello-world"));
+
+	</script>
+</head>
+<body>
+	<p>The results are displayed in the console log.</p>
+</body>
+</html>
