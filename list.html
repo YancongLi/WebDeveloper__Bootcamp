@@ -1,39 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Todo List</title>
+	<meta charset="utf-8">
+	<title>
+		Todo List
+	</title>
 	<script type="text/javascript">
-		// console.log('connected');
-
 		window.setTimeout(function() {
-  		
-  		var todos = ["a defalut item"];
+			
+			var todos = [];
 
-		var input;
+			var input;
 
-		do{
-			input = prompt("What would you like to do?");
+			do{
+				input = prompt("What would you like to do?\n" + 
+					"--------------------\n" +
+					"\" new \" - Add A Todo\n" +
+					"\" list \" - List all Todos\n" +
+					"\" delete \" - Remove a Specific Todo\n" +
+					"\" quit \" - Quit App");
 
-			if (input === "list") {
-				console.log(todos);
-			}else if (input === "new") {
-				todos.push(prompt("Enter new todo: "));
+				if (input === "list") {
+					listTodos();
+				}else if (input === "new") {
+					addTodo();
+				}else if (input === "delete") {
+					deleteTodo();
+				}
+			} while (input !== "quit");
+
+			if (input === "quit") {
+				alert("Please refresh this webpage to restart :)")
 			}
-		} while (input !== "quit");
-
-		}, 500);
 
 
-	</script>
+			function listTodos() {
+				console.log('********');
+				todos.forEach(function(todo, index) {
+					console.log(index + ". " + todo);
+				});
+				console.log('********');
+			}
+
+			function addTodo() {
+				var newTodo = prompt("Enter new todo: ");
+				todos.push(newTodo);
+				console.log("Added: " + newTodo);
+			}
+
+			function deleteTodo() {
+			//ask for index of todo to delete
+			var index = prompt("Which index of todo you want to delete?");
+			//delete that todo(use splice)
+			var deletedItem = todos.splice(index, 1);
+			console.log("Deleted: " + deletedItem);
+		}
+
+	}, 500);
+</script>
+</meta>
 </head>
 <body>
-	<h1>Todo List</h1>
-
+	<h1>
+		Todo List
+	</h1>
 	<ul>
-		<li>"new" - Add A Todo</li>
-		<li>"list" - List all Todos</li>
-		<li>"quit" - Quit App</li>
+		<li>
+			"new" - Add A Todo
+		</li>
+		<li>
+			"list" - List all Todos
+		</li>
+		<li>
+			"delete" - Remove a Specific Todo
+		</li>
+		<li>
+			"quit" - Quit App
+		</li>
 	</ul>
 </body>
 </html>
