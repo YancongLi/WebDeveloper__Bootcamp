@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Color Toggle</title>
+</head>
+<body>
+	<button>Click Me</button>
+
+	<script type="text/javascript">
+		let button = document.querySelector("button");
+		let isBackgroundWhite = true;
+		button.addEventListener("click", changeBackgroundColor);
+		function changeBackgroundColor() {
+			if (isBackgroundWhite) {
+				document.body.style.background = 'purple';
+			} else {
+				document.body.style.background = 'white';
+			}
+			isBackgroundWhite = !isBackgroundWhite;
+		}
+	</script>
+</body>
+</html>
