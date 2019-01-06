@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Methods</title>
+	<script src="lib/jquery-3.3.1.min.js"></script>
+	<style type="text/css">
+	.correct {
+		color: green;
+	}
+	.wrong {
+		color: red;
+		background: pink;
+	}
+	.done {
+		color: gray;
+		text-decoration: line-through;
+	}
+</style>
+</head>
+<body>
+	<h1>jQuery Methods Demo Page</h1>
+
+	<input type="text" placeholder="Your Name">
+
+	<select name="" id="">
+		<option >Ostrich</option>
+		<option >Turtle</option>
+		<option >Toad</option>
+	</select>
+
+	<ul>
+		<li>Skittles</li>
+		<li>Starburst</li>
+		<li>Twix </li>
+	</ul>
+
+	<p>Blue:</p>
+
+	<img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Color_icon_blue.svg" alt="">
+	<img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Color_icon_blue.svg" alt="">
+	<img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Color_icon_blue.svg" alt="">
+
+
+	<script>
+		$('img').css('width','200px');
+		$('img:first').css('width', '100px');
+		$('img').last().css('width','300px');
+
+
+		$('h1').addClass('wrong');
+		for (let i = 0; i < 6; i++) {
+			$('li').toggle('correct');
+		}
+		$('li').first().addClass('done');
+	</script>
+	</html>
