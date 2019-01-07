@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Events</title>
+	<script src="lib/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<h1>jQuery Events</h1>
+	<h1>jQuery Events</h1>
+	<h1>jQuery Events</h1>
+	<input type="text">
+	<button>Dont' Click Me! XD</button>
+	<button>Seriously Don't Click Me</button>
+	<button>This is your last warning!</button>
+
+	<script>
+		$('h1').click(function() {
+			console.log('h1 is clikcked!');
+		});
+		$('button').click(function() {
+			$(this).css('background', 'pink');
+			let text = $(this).text();
+			console.log('You clicked: ' + text);
+		});
+		$('input[type = text]').keyup(function(event) {
+			if (event.which === 13 ) {
+				alert("You pressed the ENTER key!");
+			}
+			let text = $(this).val();
+			console.log('Your pressed a key: ' + text);
+		});
+		$('h1').on('click', function () {
+			$(this).css('color', 'purple');
+		})
+		$('button').on('mouseenter', function () {
+			$(this).css('font-weight', 'bold');
+		});
+		$('button').on('mouseleave', function () {
+			$(this).css('font-weight', 'normal');
+		});
+	</script>
+</body>
+</html>
